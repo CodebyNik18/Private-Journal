@@ -19,20 +19,21 @@
 
             {% if messages %}
             {% for message in messages %}
-            <div class="message success">
+            <div>
                 {{ message }}
             </div>
             {% endfor %}
             {% endif %}
 
-            <form>
+            <form action="{% url 'log_in' %}" method="post">
+                {% csrf_token %}
                 <div class="input-group">
-                    <input type="text" required>
+                    <input name="username" type="text" required>
                     <label>Username</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="password" required>
+                    <input name="password" type="password" required>
                     <label>Password</label>
                 </div>
 
