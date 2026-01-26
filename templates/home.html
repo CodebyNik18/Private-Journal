@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Journal</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Journal.</div>
+        <nav class="nav-links">
+            <a href="{% url 'login' %}" class="nav-btn outline">Log In</a>
+            <a href="{% url 'sign_in' %}" class="nav-btn solid">Sign Up</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Write. Reflect. Stay Private.</h1>
+            <p>
+                A secure personal journal system where your thoughts remain truly yours.
+                Built for focus, privacy, and simplicity.
+            </p>
+
+            <div class="hero-actions">
+                <a href="{% url 'sign_in' %}" class="cta primary">Start Journaling</a>
+                <a href="{% url 'about' %}" class="cta secondary">About Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>Why This Journal Exists</h2>
+        <p class="about-desc">
+            This project is built as a Django learning application to understand
+            authentication, user-based data access, and CRUD operations —
+            without external APIs.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <span>🔒</span>
+                <h3>Private by Design</h3>
+                <p>Each user can only access and manage their own journal entries.</p>
+            </div>
+
+            <div class="card">
+                <span>✍️</span>
+                <h3>Distraction Free</h3>
+                <p>Minimal interface focused purely on writing and reflection.</p>
+            </div>
+
+            <div class="card">
+                <span>👤</span>
+                <h3>User Based System</h3>
+                <p>Built using Django authentication and permissions.</p>
+            </div>
+
+            <div class="card">
+                <span>⚙️</span>
+                <h3>Learning Purpose</h3>
+                <p>Designed to deeply understand Django fundamentals.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Personal Journal System • Built with Django</p>
+    </footer>
+
+</body>
+
+</html>

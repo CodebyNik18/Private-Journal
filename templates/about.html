@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About • Personal Journal</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+
+<header class="header">
+    <h1>About This Project</h1>
+    <p class="tagline">A quiet place built for personal thoughts and focused learning</p>
+</header>
+
+<main class="content">
+    <section class="block">
+        <h2>What is Personal Journal?</h2>
+        <p>
+            Personal Journal is a private web application where users can safely write,
+            store, and manage their personal thoughts. Each journal entry belongs only
+            to its creator, ensuring privacy and ownership by design.
+        </p>
+        <p>
+            The platform focuses on simplicity and clarity, avoiding unnecessary
+            features so users can concentrate on writing and reflection.
+        </p>
+    </section>
+
+    <section class="block">
+        <h2>Purpose of the Project</h2>
+        <p>
+            This project is built as a long-term learning application using Django.
+            Instead of relying on APIs or frontend-heavy frameworks, the goal is to
+            deeply understand backend fundamentals such as authentication, database
+            relationships, permissions, and user-specific data handling.
+        </p>
+        <p>
+            It serves both as a personal learning journey and a foundation for building
+            real-world Django applications.
+        </p>
+    </section>
+
+    <section class="block">
+        <h2>How Privacy is Handled</h2>
+        <p>
+            Every journal entry is strictly associated with a single authenticated user.
+            Users can only create, view, edit, or delete their own entries. No shared
+            content, no public feeds, and no external access.
+        </p>
+        <p>
+            This approach reflects the core philosophy of the project — privacy first.
+        </p>
+    </section>
+
+    <section class="block">
+        <h2>Technology Used</h2>
+        <p>
+            The application is built entirely using Django, with server-rendered pages
+            and traditional form handling. No external APIs are used, making the system
+            easy to understand, maintain, and extend.
+        </p>
+        <p>
+            HTML and CSS are used to create a clean, distraction-free interface that
+            complements the writing experience.
+        </p>
+    </section>
+
+    <section class="block">
+        <h2>Long-Term Vision</h2>
+        <p>
+            This project is intended to grow gradually. Future enhancements may include
+            richer writing tools, better organization, and performance improvements —
+            all while keeping the interface minimal and the user experience focused.
+        </p>
+        <p>
+            The aim is not complexity, but clarity.
+        </p>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Personal Journal System • Built with Django</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #1c1c1c;
+    line-height: 1.8;
+}
+
+/* Header */
+.header {
+    background: #ffffff;
+    padding: 70px 20px 50px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.header h1 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Content */
+.content {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.block {
+    margin-bottom: 50px;
+    animation: slideUp 0.9s ease;
+}
+
+.block h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.block p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 34px;
+    }
+
+    .content {
+        margin: 40px auto;
+    }
+}
