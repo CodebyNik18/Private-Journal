@@ -2,39 +2,50 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In • Journal</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
+
 <body>
 
-<div class="container">
-    <div class="login-box">
-        <h1>Welcome back</h1>
-        <p class="subtitle">Log in to access your private journal</p>
+    <div class="container">
+        <div class="login-box">
+            <h1>Welcome back</h1>
+            <p class="subtitle">Log in to access your private journal</p>
 
-        <form>
-            <div class="input-group">
-                <input type="text" required>
-                <label>Username</label>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="message success">
+                {{ message }}
             </div>
+            {% endfor %}
+            {% endif %}
 
-            <div class="input-group">
-                <input type="password" required>
-                <label>Password</label>
-            </div>
+            <form>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
 
-            <button type="submit" class="btn">Log In</button>
-        </form>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
 
-        <p class="signup-text">
-            New here?
-            <a href="{% url 'sign_in' %}">Create an account</a>
-        </p>
+                <button type="submit" class="btn">Log In</button>
+            </form>
+
+            <p class="signup-text">
+                New here?
+                <a href="{% url 'sign_in' %}">Create an account</a>
+            </p>
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>
