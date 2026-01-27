@@ -14,7 +14,8 @@
 </header>
 
 <main class="editor-container">
-    <form class="editor-box">
+    <form action="{% url 'add' %}" method="post" class="editor-box">
+        {% csrf_token %}
         <h1>New Journal Entry</h1>
         <p class="subtitle">Write freely. This space is yours.</p>
 
@@ -24,7 +25,7 @@
         </div>
 
         <div class="input-group">
-            <textarea name="content" rows="8" required></textarea>
+            <textarea name="content" rows="8"></textarea>
             <label>Your thoughts</label>
         </div>
 
