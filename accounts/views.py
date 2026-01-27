@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import include
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -26,9 +27,9 @@ def log_in(request):
         password = request.POST['password']
         user = authenticate(request=request, username=name, password=password)
         
-        if user is not None:
+        if user:
             login(request=request, user=user)
-            return HttpResponse("This is main Journal Page.")
+            return redirect('journals_notes')
         else:
             messages.error(request, 'Invalid username or password..')
             
