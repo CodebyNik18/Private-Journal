@@ -11,55 +11,40 @@
 
 <header class="topbar">
     <h1>My Journal</h1>
-    <a href="#" class="add-btn">+ New Entry</a>
+    <a href="{% url 'add' %}" class="add-btn">+ New Entry</a>
 </header>
 
 <main class="container">
 
     <!-- Journal Card -->
-    <div class="journal-card">
-        <div class="card-header">
-            <h2>Day 1 – New Beginnings</h2>
-            <span class="date">26 Jan 2026</span>
-        </div>
+    {% if journals %}
+        {% for journal in journals %}
+            <div class="journal-card">
+                <div class="card-header">
+                    <h2>{{ journal.title }}</h2>
+                    <span class="date">{{ journal.updated_at }} </span>
+                </div>
 
-        <p class="content">
-            Today I started building my personal journal project using Django.
-            Authentication was tough, but I finally understood how it works.
-        </p>
+                <p class="content">
+                    {{ journal.content }}
+                </p>
 
-        <div class="card-actions">
-            <a href="#" class="edit">Edit</a>
-            <a href="#" class="delete">Delete</a>
-        </div>
-    </div>
-
-    <!-- Journal Card -->
-    <div class="journal-card">
-        <div class="card-header">
-            <h2>Learning Curve</h2>
-            <span class="date">25 Jan 2026</span>
-        </div>
-
-        <p class="content">
-            Backend development really tests patience. But every small win
-            feels incredibly rewarding.
-        </p>
-
-        <div class="card-actions">
-            <a href="#" class="edit">Edit</a>
-            <a href="#" class="delete">Delete</a>
-        </div>
-    </div>
+                <div class="card-actions">
+                    <a href="#" class="edit">Edit</a>
+                    <a href="#" class="delete">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
 
     <!-- Empty State (use later) -->
-    <!--
-    <div class="empty-state">
-        <h2>No journal entries yet</h2>
-        <p>Start writing your first journal entry.</p>
-        <a href="#" class="add-btn">Create Entry</a>
-    </div>
-    -->
+    {% else %}
+        <div class="empty-state">
+            <h2>No journal entries yet</h2>
+            <p>Start writing your first journal entry.</p>
+            <a href="{% url 'add' %}" class="add-btn">Create Entry</a>
+        </div>
+    {% endif %}
+   
 
 </main>
 

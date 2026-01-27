@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Journal Entry</title>
+    <link rel="stylesheet" href="{% static 'css/add_journal.css' %}">
+</head>
+<body>
+
+<header class="topbar">
+    <a href="{% url 'journals_notes' %}" class="back-link">← Back to Journals</a>
+</header>
+
+<main class="editor-container">
+    <form class="editor-box">
+        <h1>New Journal Entry</h1>
+        <p class="subtitle">Write freely. This space is yours.</p>
+
+        <div class="input-group">
+            <input type="text" name="title" required>
+            <label>Title</label>
+        </div>
+
+        <div class="input-group">
+            <textarea name="content" rows="8" required></textarea>
+            <label>Your thoughts</label>
+        </div>
+
+        <div class="actions">
+            <button type="submit" class="save-btn">Save Entry</button>
+            <a href="{% url 'journals_notes' %}" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</main>
+
+</body>
+</html>

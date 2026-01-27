@@ -23,5 +23,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('accounts/', include('accounts.urls')),
     path('journals/', views.journals, name='journals_notes'),
-    # path('', include('journals.urls'))
+    path('journals/', include('journals.urls')),
 ]
