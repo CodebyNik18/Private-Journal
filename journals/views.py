@@ -26,3 +26,9 @@ def edit_journal(request, pk):
         'journal': journal
     }
     return render(request=request, template_name='edit_journal.html', context=context)
+
+
+def delete_journal(request, pk):
+    journal = AddJournal.objects.get(user=request.user, pk=pk)
+    journal.delete()
+    return redirect('journals_notes')

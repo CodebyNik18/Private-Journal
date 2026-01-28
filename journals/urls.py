@@ -8,4 +8,7 @@ urlpatterns = [
     #Edit Journal
     path('edit_journal/<int:pk>', views.edit_journal, name="edit_journal"),
     
+    #Delete Journal
+    path('delete_journal/<int:pk>', views.delete_journal, name="delete_journal")
+    
 ]

@@ -22,7 +22,7 @@
             <div class="journal-card">
                 <div class="card-header">
                     <h2>{{ journal.title }}</h2>
-                    <span class="date">{{ journal.updated_at }} </span>
+                    <span class="date">{{ journal.updated_at }}</span>
                 </div>
 
                 <p class="content">
@@ -31,7 +31,7 @@
 
                 <div class="card-actions">
                     <a href="{% url 'edit_journal' journal.id %}" class="edit">Edit</a>
-                    <a href="#" class="delete">Delete</a>
+                    <a href="{% url 'delete_journal' journal.id %}" class="delete">Delete</a>
                 </div>
             </div>
         {% endfor %}
