@@ -20,7 +20,6 @@ def sign_in(request):
     return render(request=request, template_name='sign_up.html')
 
 
-@login_required
 def log_in(request):
     
     if request.method == 'POST':
