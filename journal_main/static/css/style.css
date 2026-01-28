@@ -207,3 +207,49 @@ body {
         padding: 70px 30px;
     }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button, a {
+  max-width: 100%;
+}
+
+.hero, .container, .main, .content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.hero-buttons, .buttons, .cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .navbar, .nav, .header {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+
+  button, a {
+    width: 100%;
+    text-align: center;
+  }
+}
