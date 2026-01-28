@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Journal Entry</title>
+    <link rel="stylesheet" href="{% static 'css/edit_journal.css' %}">
+</head>
+<body>
+
+<header class="topbar">
+    <a href="{% url 'journals_notes' %}" class="back-link">← Back to Journals</a>
+</header>
+
+<main class="editor-container">
+    <form action="{% url 'edit_journal' journal.id %}" method="post" class="editor-box">
+        {% csrf_token %}
+        <h1>Edit Journal Entry</h1>
+        <p class="subtitle">Refine your thoughts. Take your time.</p>
+
+        <div class="input-group">
+            <input type="text" name="title" value="{{ journal.title }}" required>
+            <label>Title</label>
+        </div>
+
+        <div class="input-group">
+            <textarea name="content" rows="8">{{journal.content}}</textarea>
+            <label>Your thoughts</label>
+        </div>
+
+        <div class="actions">
+            <button type="submit" class="save-btn">Update Entry</button>
+            <a href="{% url 'journals_notes' %}" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</main>
+
+</body>
+</html>
