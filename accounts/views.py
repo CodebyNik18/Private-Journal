@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 
 def sign_in(request):
@@ -19,7 +20,7 @@ def sign_in(request):
     return render(request=request, template_name='sign_up.html')
 
 
-
+@login_required
 def log_in(request):
     
     if request.method == 'POST':
